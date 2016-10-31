@@ -17,7 +17,6 @@ from sklearn.cluster import KMeans
 from shapely.geometry import Point
 from shapely.geometry import LineString
 import matplotlib.pyplot as plt
-#import ggplot
 
 
 os.chdir('/home/marcelo/Desktop/2016.1/Data Incubator/challenge/q3/deploy')
@@ -89,7 +88,8 @@ route = pd.DataFrame(candidate_points_coords, columns=['x','y'])
 # plots 3000 gps observations
 
 df = df.head(3000)
-ax = df.plot(kind='scatter', x='x', y='y', color='blue')
+ax = df.plot(kind='scatter', x='x', y='y', color='blue', \
+title='GPS observations (blue) and candidate waypoints (red) ')
 route.plot(kind='scatter', x='x', y='y', color='red', ax=ax)
 
 candidate_points = []
@@ -98,10 +98,11 @@ for x,y in candidate_points_coords:
 
 # build route by greedly searching for the nearest candidate waypoint up to a certain distance
 
-threshold_distance = 1700
+threshold_distance = 1400
 
 unvisited = list(candidate_points)
-visited = [unvisited.pop( randint(0, len(unvisited) ) ) ]
+seed = randint(0, len(unvisited) ) #24
+visited = [unvisited.pop( seed ) ]
             
 while len(unvisited) > 0:
     current_point = visited[-1]
