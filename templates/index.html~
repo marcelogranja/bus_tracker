@@ -10,10 +10,10 @@
 	<body>
 		<div>
   			<h1>Bus tracker</h1>
-				<img id="img1" src="583route.png" />
-				<img id="img2" src="gps_obs.png" />
-				<img id="img3" src="proposed_route.png" />
-				<img id="img4"src="xt_diagram.png" />
+				<img id="img1" src="/tmp/583route.png" />
+				<img id="img2" src="/tmp/gps_obs.png" />
+				<img id="img3" src="/tmp/proposed_route.png" />
+				<img id="img4" src="/tmp/xt_diagram.png" />
 
 		</div>
 	</body>
